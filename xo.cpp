@@ -1,3 +1,12 @@
+// xo.cpp class  bye jadi (www.Jadi.net, JadiJadi@gmail.com)
+// har kas khast mitoone be onvane projecte khodesh tahvil har kas bede !
+// har joor taghir toosh mojaze !
+// Jadi, 840301
+
+// be darkhaste yek dooste jadid, kami comment behesh ezafe kardam !
+// chon Jadi.net filter ast mizaramesh dar site jadidam : www.FreeKeyboard.net 
+
+
 #include <iostream>  // baraye khandan va neveshtan ba cout va cin
 #include <windows.h>
 
