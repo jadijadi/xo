@@ -84,7 +84,6 @@ void TicTaToe::ShowBoard(void) // har vaght seda zade shava safheye bazi ra nama
 {
     textattr(2); // set color green
     clrscr(); // clear screen
-	cout << "\n";
 	for (int i=0; i<3; i++) {
 		for (int j=0; j<3; j++)
 			if (cell[i][j]==1)
@@ -94,8 +93,24 @@ void TicTaToe::ShowBoard(void) // har vaght seda zade shava safheye bazi ra nama
 			else
 				cprintf("%d ", j+1+(i*3));
 
-		cout << "\n";
+		cout << "\n\n";
 	}
+	textattr(4); // line color red
+	for(int y=1; y<6; y++){
+            for(int x=2; x<6; x+=2){
+                    gotoxy(x,y);
+                    cprintf("|");
+            }
+	}
+	gotoxy(1,1);
+	for(int y=2; y<6; y+=2){
+            for(int x=1; x<6; x+=2){
+                    gotoxy(x,y);
+                    cprintf("-");
+            }
+	}
+	gotoxy(1,7); // Bad code, I'll fix it later :)
+
 }
 
 
