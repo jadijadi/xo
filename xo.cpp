@@ -82,7 +82,8 @@ char TicTaToe::GetTurn()
 }
 void TicTaToe::ShowBoard(void) // har vaght seda zade shava safheye bazi ra namayesh midahad
 {
-    clrscr();
+    textattr(2); // set color green
+    clrscr(); // clear screen
 	cout << "\n";
 	for (int i=0; i<3; i++) {
 		for (int j=0; j<3; j++)
