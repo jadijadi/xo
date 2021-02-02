@@ -4,15 +4,15 @@
 // Jadi, 840301
 
 // be darkhaste yek dooste jadid, kami comment behesh ezafe kardam !
-// chon Jadi.net filter ast mizaramesh dar site jadidam : www.FreeKeyboard.net 
+// chon Jadi.net filter ast mizaramesh dar site jadidam : www.FreeKeyboard.net
 
 
 
-#include "stdafx.h"
+//#include "stdafx.h"
 #include <iostream>  // baraye khandan va neveshtan ba cout va cin
-#include "conio.h"   // baraye tabe'e kbhit dar khatte akhar ke montazere feshordane yek kelid mimanim
+#include <conio.h>   // baraye tabe'e kbhit dar khatte akhar ke montazere feshordane yek kelid mimanim
 
-using namespace std; 
+using namespace std;
 
 class TicTaToe  // in kelase asli ast
 {
@@ -39,7 +39,7 @@ TicTaToe::TicTaToe(void)
 TicTaToe::Play(int x)
 {
 	x--;
-	if (x >= 0 && x <= 8 && (!cell[x/3][x%3]) ){  // agar taraf baziye ghanooni karde 
+	if (x >= 0 && x <= 8 && (!cell[x/3][x%3]) ){  // agar taraf baziye ghanooni karde
 		cell[x/3][x%3]=turn;                  // aan noghte ra baraye taraf alamat mizanim
 		turn == 1? turn = 2 : turn = 1;       // nobat ra avaz mikonim
 		ShowBoard();                          // safhe ra neshan midahim
@@ -50,10 +50,10 @@ TicTaToe::Play(int x)
 }
 TicTaToe::HaveWinner(void)
 {
-	int i;
+    int i;
 		// in tabe moshakhas mikonad kasi barande shode ya na. be sadegi ba 2 ta for satr o sotoon
                 // ra check mikonad va ba 2 ta if, zarbdari ha ra
-	for (int i=0; i<3; i++) 
+	for (int i=0; i<3; i++)
 		if (cell[i][0]!=0 && cell[i][0]==cell[i][1] && cell[i][1]==cell[i][2] && cell[i][2]==cell[i][0])
 			return cell[i][0];  // barande ra bar migardanim
 	for (int i=0; i<3; i++)
@@ -82,16 +82,17 @@ char TicTaToe::GetTurn()
 }
 void TicTaToe::ShowBoard(void) // har vaght seda zade shava safheye bazi ra namayesh midahad
 {
+    clrscr();
 	cout << "\n";
 	for (int i=0; i<3; i++) {
-		for (int j=0; j<3; j++) 
-			if (cell[i][j]==1) 
+		for (int j=0; j<3; j++)
+			if (cell[i][j]==1)
 				cout << "X ";
 			else if (cell[i][j]==2)
 				cout << "O ";
-			else 
+			else
 				cout << j+1+(i*3) << " ";
-		
+
 		cout << "\n";
 	}
 }
@@ -99,13 +100,14 @@ void TicTaToe::ShowBoard(void) // har vaght seda zade shava safheye bazi ra nama
 
 int main()
 {
+    clrscr();
 	TicTaToe board;
 	int x;
 	char starter;
 
 	// mikhanim ke che kasi bazi ra shoroo mikonad va aan ra moshakhas mikonim
-	cout << "Who starts (X/O) ? "; 
-	cin >> starter;   
+	cout << "Who starts (X/O) ? ";
+	cin >> starter;
 	board.SetTurn(((starter=='X' || starter=='x') ? 1 : 2));
 
 	// ta vaghti ke barande nadarim ya bazi mosavi nashode
@@ -114,15 +116,16 @@ int main()
 		cin >> x;
 		if (!board.Play(x)) // agar bazi gheyre mojaz bood
 			cout << "Illegal Move ! Try again palyer " << board.GetTurn() << "\n";
+
 	}
 
 	// az while kharej shode'im yani bazi barande dashte ya mosavi shode
 	if (board.HaveWinner()>0) // agar barande dashte migooyim kist
 		cout << "\n\nWoww... the winner is " << (board.HaveWinner()==1 ? "X" : "O" ) << "\n";
-	else 
+	else
 		cout << "\n\nA tie ! \n"; // dar gheyre in soorat yani moasvi shode
 
-	while (!kbhit()); // montazer mimanim yek kelid feshorde sahvad
+	getch(); // montazer mimanim yek kelid feshorde sahvad
 	return 0; // khaste nabashid. bazi tamaam !
 }
 
