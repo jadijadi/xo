@@ -87,11 +87,11 @@ void TicTaToe::ShowBoard(void) // har vaght seda zade shava safheye bazi ra nama
 	for (int i=0; i<3; i++) {
 		for (int j=0; j<3; j++)
 			if (cell[i][j]==1)
-				cout << "X ";
+				cprintf("X ");
 			else if (cell[i][j]==2)
-				cout << "O ";
+				cprintf("O ");
 			else
-				cout << j+1+(i*3) << " ";
+				cprintf("%d ", j+1+(i*3));
 
 		cout << "\n";
 	}
