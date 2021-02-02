@@ -50,6 +50,7 @@ TicTaToe::Play(int x)
 }
 TicTaToe::HaveWinner(void)
 {
+	int i;
 		// in tabe moshakhas mikonad kasi barande shode ya na. be sadegi ba 2 ta for satr o sotoon
                 // ra check mikonad va ba 2 ta if, zarbdari ha ra
 	for (int i=0; i<3; i++) 
