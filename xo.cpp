@@ -8,16 +8,16 @@
 
 
 
-#include "stdafx.h"
+//#include "stdafx.h" //thesaeid: not found ! and without this include the game could be run
 #include <iostream>  // baraye khandan va neveshtan ba cout va cin
 #include "conio.h"   // baraye tabe'e kbhit dar khatte akhar ke montazere feshordane yek kelid mimanim
 
 using namespace std; 
 
-class TicTaToe  // in kelase asli ast
+class TicTacToe  // in kelase asli ast //thesaeid: fixed some typoes! (replaced TicTaToe with TicTacToe)
 {
 public:
-	TicTaToe(void);        // tabe ra init mikonad
+	TicTacToe(void);        // tabe ra init mikonad
 	int HaveWinner(void);  // dar soorati ke bazi barande dashte bashad, aan ra moshakh'khas mikonad
 	int Play(int x);       // yek bazikon bazi mikonad
 	void SetTurn(int player); // mokhakhas mikonad ke nobate baziye kist
@@ -28,7 +28,7 @@ private:
 	void ShowBoard(void);   // safheye bazi ra print mikonad
 	int turn;               // in moteghayer moshakhas mikonad ke nobate kist
 };
-TicTaToe::TicTaToe(void)
+TicTacToe::TicTacToe(void)
 {
 	for (int i=0; i<3; i++)        // mogheye shoroo'e bazi, hameye safhe ra 0 (khaali) mikonim
 		for (int j=0; j<3; j++)
@@ -36,7 +36,7 @@ TicTaToe::TicTaToe(void)
 	ShowBoard();                   // va safhe ra namayesh midahim
 }
 
-TicTaToe::Play(int x)
+TicTacToe::Play(int x)
 {
 	x--;
 	if (x >= 0 && x <= 8 && (!cell[x/3][x%3]) ){  // agar taraf baziye ghanooni karde 
@@ -48,7 +48,7 @@ TicTaToe::Play(int x)
 	ShowBoard(); // taraf baziye gheyre mojaz karde ! safhe ra neshan midahim ta dobare bazi konad
 	return 0;
 }
-TicTaToe::HaveWinner(void)
+TicTacToe::HaveWinner(void)
 {
 		// in tabe moshakhas mikonad kasi barande shode ya na. be sadegi ba 2 ta for satr o sotoon
                 // ra check mikonad va ba 2 ta if, zarbdari ha ra
@@ -65,21 +65,21 @@ TicTaToe::HaveWinner(void)
 
 		// agar kasi barande nashode bashad va hameye khaane ha por bashad yani mosavi shode'and
 	int tie=-1;
-	for (i=0; i<3; i++)
+	for (int i=0; i<3; i++) //thesaeid: i was not declared!
 		for (int j=0; j<3; j++)
 			if (cell[i][j]==0)
 				tie=0;
 	return tie;   // barmigardanim ke bazi mosavi shode (-1)
 }
-void TicTaToe::SetTurn(int player)
+void TicTacToe::SetTurn(int player)
 {
 	turn=player;
 }
-char TicTaToe::GetTurn()
+char TicTacToe::GetTurn()
 {
 	return (turn==1 ? 'X' : 'O');
 }
-void TicTaToe::ShowBoard(void) // har vaght seda zade shava safheye bazi ra namayesh midahad
+void TicTacToe::ShowBoard(void) // har vaght seda zade shava safheye bazi ra namayesh midahad
 {
 	cout << "\n";
 	for (int i=0; i<3; i++) {
@@ -98,7 +98,7 @@ void TicTaToe::ShowBoard(void) // har vaght seda zade shava safheye bazi ra nama
 
 int main()
 {
-	TicTaToe board;
+	TicTacToe board;
 	int x;
 	char starter;
 
