@@ -1,4 +1,4 @@
-// xo.cpp class  bye jadi (www.Jadi.net, JadiJadi@gmail.com)
+// xo.cpp class  by jadi (www.Jadi.net, JadiJadi@gmail.com)
 // har kas khast mitoone be onvane projecte khodesh tahvil har kas bede !
 // har joor taghir toosh mojaze !
 // Jadi, 840301
@@ -36,7 +36,7 @@ TicTaToe::TicTaToe(void)
 	ShowBoard();                   // va safhe ra namayesh midahim
 }
 
-TicTaToe::Play(int x)
+int TicTaToe::Play(int x)
 {
 	x--;
 	if (x >= 0 && x <= 8 && (!cell[x/3][x%3]) ){  // agar taraf baziye ghanooni karde 
@@ -48,7 +48,7 @@ TicTaToe::Play(int x)
 	ShowBoard(); // taraf baziye gheyre mojaz karde ! safhe ra neshan midahim ta dobare bazi konad
 	return 0;
 }
-TicTaToe::HaveWinner(void)
+int TicTaToe::HaveWinner(void)
 {
 		// in tabe moshakhas mikonad kasi barande shode ya na. be sadegi ba 2 ta for satr o sotoon
                 // ra check mikonad va ba 2 ta if, zarbdari ha ra
@@ -65,7 +65,7 @@ TicTaToe::HaveWinner(void)
 
 		// agar kasi barande nashode bashad va hameye khaane ha por bashad yani mosavi shode'and
 	int tie=-1;
-	for (i=0; i<3; i++)
+	for (int i=0; i<3; i++)
 		for (int j=0; j<3; j++)
 			if (cell[i][j]==0)
 				tie=0;
