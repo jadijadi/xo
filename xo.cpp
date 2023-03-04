@@ -1,4 +1,4 @@
-// xo.cpp class  by jadi (www.Jadi.net, JadiJadi@gmail.com)
+// xo.cpp class  bye jadi (www.Jadi.net, JadiJadi@gmail.com)
 // har kas khast mitoone be onvane projecte khodesh tahvil har kas bede !
 // har joor taghir toosh mojaze !
 // Jadi, 840301
